@@ -32,6 +32,7 @@ To use a source encoding other than Windows-1255, pass its `iconv` name:
 The script:
 
 - Matches `.srt` and `.sub` extensions case-insensitively.
+- Ignores macOS `._*` AppleDouble metadata files on external drives.
 - Keeps each original as `<filename>.bak`.
 - Skips files that are already valid UTF-8.
 - Handles filenames containing spaces.

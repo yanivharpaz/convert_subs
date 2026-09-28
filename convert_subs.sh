@@ -80,7 +80,8 @@ while IFS= read -r -d '' file; do
   temp_file=""
   printf 'Converted: %s (backup: %s)\n' "$file" "$backup"
   converted=$((converted + 1))
-done < <(find . -maxdepth 1 -type f \( -iname '*.srt' -o -iname '*.sub' \) -print0)
+done < <(find . -maxdepth 1 -type f ! -name '._*' \
+  \( -iname '*.srt' -o -iname '*.sub' \) -print0)
 
 printf '\nDone: %d converted, %d skipped, %d failed.\n' "$converted" "$skipped" "$failed"
 
