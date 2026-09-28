@@ -1,13 +1,14 @@
 # convert_subs
 
-Small shell and Python scripts that convert `.srt` and `.sub` subtitle files
-in the current directory to UTF-8. The source encoding defaults to
+Shell, Python, and PowerShell scripts that convert `.srt` and `.sub` subtitle
+files in the current directory to UTF-8. The source encoding defaults to
 Windows-1255.
 
 ## Requirements
 
 - Shell version: macOS, Bash, and `iconv` (included with macOS)
 - Python version: Python 3.7 or newer
+- PowerShell version: PowerShell 7 or newer
 
 ## Shell usage
 
@@ -49,7 +50,27 @@ Run its unit tests from the repository root:
 python3 -m unittest discover -s tests
 ```
 
-Both versions:
+## PowerShell usage
+
+Run the PowerShell version from the directory containing the subtitle files:
+
+```powershell
+pwsh /path/to/convert_subs.ps1
+```
+
+An alternative source encoding can also be provided:
+
+```powershell
+pwsh /path/to/convert_subs.ps1 ISO-8859-8
+```
+
+Run its self-contained tests from the repository root:
+
+```powershell
+pwsh -NoProfile -File tests/test_convert_subs.ps1
+```
+
+All versions:
 
 - Matches `.srt` and `.sub` extensions case-insensitively.
 - Ignores macOS `._*` AppleDouble metadata files on external drives.
