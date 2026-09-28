@@ -1,0 +1,7 @@
+# Subtitle inputs and generated backups may contain copyrighted material.
+*.srt
+*.SRT
+*.sub
+*.SUB
+*.bak
+examples/
