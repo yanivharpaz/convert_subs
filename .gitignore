@@ -5,3 +5,5 @@
 *.SUB
 *.bak
 examples/
+__pycache__/
+*.py[cod]

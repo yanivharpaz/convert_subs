@@ -1,15 +1,15 @@
 # convert_subs
 
-A small macOS shell script that converts `.srt` and `.sub` subtitle files in
-the current directory to UTF-8. The source encoding defaults to Windows-1255.
+Small shell and Python scripts that convert `.srt` and `.sub` subtitle files
+in the current directory to UTF-8. The source encoding defaults to
+Windows-1255.
 
 ## Requirements
 
-- macOS
-- Bash
-- `iconv` (included with macOS)
+- Shell version: macOS, Bash, and `iconv` (included with macOS)
+- Python version: Python 3.7 or newer
 
-## Usage
+## Shell usage
 
 Make the script executable:
 
@@ -29,7 +29,27 @@ To use a source encoding other than Windows-1255, pass its `iconv` name:
 /path/to/convert_subs.sh ISO-8859-8
 ```
 
-The script:
+## Python usage
+
+Run the Python version from the directory containing the subtitle files:
+
+```sh
+python3 /path/to/convert_subs.py
+```
+
+An alternative source encoding can also be provided:
+
+```sh
+python3 /path/to/convert_subs.py ISO-8859-8
+```
+
+Run its unit tests from the repository root:
+
+```sh
+python3 -m unittest discover -s tests
+```
+
+Both versions:
 
 - Matches `.srt` and `.sub` extensions case-insensitively.
 - Ignores macOS `._*` AppleDouble metadata files on external drives.
